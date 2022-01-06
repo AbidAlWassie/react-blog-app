@@ -6,6 +6,12 @@
   background: #1c1c1c;
   color: #f2f2f2;
 }
+
+html {
+  color-scheme: dark;
+  scrollbar-color: #686868 #424242;
+}
+
 .navbar {
   padding: 20px;
   display: flex;
