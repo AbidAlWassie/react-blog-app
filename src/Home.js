@@ -13,8 +13,8 @@ const Home = () => {
     <div className="home">
       {/* <h2>Homepage</h2> */}
       {blogs.map((blog) => (
-        <div className="blogPreview" key={blog.id}>
-          <h2> {blog.title} </h2>
+        <div className="blogPreview mt-5" key={blog.id}>
+          <h2 className="bold text-3xl cursor-pointer"> {blog.title} </h2>
           <p>Written by {blog.author} </p>
         </div>
       ))}
