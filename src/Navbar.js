@@ -2,7 +2,7 @@ const Navbar = () => {
   const css = {
     color: "#ffffff",
     backgroundColor: "#f1356d",
-    borderRadius: "5px",
+    borderRadius: "5px"
   };
   return ( 
     <nav className="navbar">

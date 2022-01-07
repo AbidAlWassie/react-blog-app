@@ -22,6 +22,7 @@ html {
 }
 .navbar h1 {
   color: #cf67ff;
+  @apply cursor-pointer font-bold;
 }
 .navbar .links {
   margin-left: auto;
