@@ -1,8 +1,5 @@
-const BlogList = ({blogs, title}) => {
-  // const blogs = props.blogs;
-  // const title = props.title;
-
-  // console.log(props, blogs);
+const BlogList = ({blogs, title, handleDelete}) => {
+  
 
   return ( 
     <div className="blog-list mb-6 pb-5 border-gray-100 border-b">
@@ -12,6 +9,7 @@ const BlogList = ({blogs, title}) => {
           <li>
           <h2 className="font-medium text-3xl cursor-pointer"> {blog.title} </h2>
           <p>Written by {blog.author} </p>
+          <button onClick={() => handleDelete(blog.id)}>Delete blog</button>
           </li>
         </ul>
       ))}

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
 
 const Home = () => {
@@ -10,12 +10,16 @@ const Home = () => {
     { title: 'Laravel + React', body: 'lorem ipsum', author: 'Abid', id: 4 },
     { title: 'My Coding Journey', body: 'lorem ipsum', author: 'Abid', id: 5 },
   ]);
-  
+
+  const handleDelete = (id) => {
+    const newBlogs = blogs.filter(blog => blog.id !== id);
+    setBlogs(newBlogs);
+  }
 
   return ( 
     <div className="home">
-      <BlogList blogs={blogs} title="All Blogs"/>
-      <BlogList blogs={blogs.filter((blog) => blog.author === "Abid")} title="My Blogs"/>
+      <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>
+      <BlogList blogs={blogs.filter((blog) => blog.author === "Abid")} title="My Blogs" handleDelete={handleDelete}/>
     </div>
   );
 }
