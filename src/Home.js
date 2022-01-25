@@ -3,13 +3,7 @@ import BlogList from "./BlogList";
 
 const Home = () => {
   
-  const [blogs, setBlogs] = useState([
-    { title: 'Web dev tips', body: 'lorem ipsum', author: 'Abid', id: 1 },
-    { title: 'Welcome cooking', body: 'lorem ipsum', author: 'Fahmid', id: 2 },
-    { title: 'My new website', body: 'lorem ipsum', author: 'Dan', id: 3 },
-    { title: 'Laravel + React', body: 'lorem ipsum', author: 'Abid', id: 4 },
-    { title: 'My Coding Journey', body: 'lorem ipsum', author: 'Abid', id: 5 },
-  ]);
+  const [blogs, setBlogs] = useState(null);
 
   const handleDelete = (id) => {
     const newBlogs = blogs.filter(blog => blog.id !== id);
@@ -17,13 +11,20 @@ const Home = () => {
   }
 
   useEffect(() => {
-    console.log("useEffect ran");
+    fetch("http://localhost:8000/blogs")
+    .then(res => {
+      return res.json();
+    })
+    .then(data => {
+      // console.log(data);
+      setBlogs(data);
+    })
   });
 
   return ( 
     <div className="home">
-      <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>
-      <BlogList blogs={blogs.filter((blog) => blog.author === "Abid")} title="My Blogs" handleDelete={handleDelete}/>
+      {blogs && <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>}
+      {/* <BlogList blogs={blogs.filter((blog) => blog.author === "Abid")} title="My Blogs" handleDelete={handleDelete}/> */}
     </div>
   );
 }
