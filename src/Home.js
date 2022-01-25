@@ -16,6 +16,10 @@ const Home = () => {
     setBlogs(newBlogs);
   }
 
+  useEffect(() => {
+    console.log("useEffect ran");
+  });
+
   return ( 
     <div className="home">
       <BlogList blogs={blogs} title="All Blogs" handleDelete={handleDelete}/>
