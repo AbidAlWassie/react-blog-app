@@ -6,7 +6,7 @@ const Navbar = () => {
   };
   return ( 
     <nav className="navbar">
-      <h1>The Site</h1>
+      <h1 className="bg-indigo-500 text-white px-2 py-1">React Test</h1>
       <a href="/">Home</a>
       <a href="/create" style={css}>New Blog</a>
     </nav>

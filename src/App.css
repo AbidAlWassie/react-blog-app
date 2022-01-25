@@ -21,7 +21,7 @@ html {
   border-bottom: 1px solid #9b9b9b;
 }
 .navbar h1 {
-  color: #cf67ff;
+  /* color: #cf67ff; */
   @apply cursor-pointer font-bold;
 }
 .navbar .links {
